@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="initial-scale=1.0" />
+        <meta charset="utf-8">
+            <title>CKEditor 5 – Inline editor</title>
+            <!--            <script src="https://cdn.ckeditor.com/ckeditor5/11.1.1/classic/ckeditor.js"></script>-->
+            <!--            <script src="https://cdn.ckeditor.com/ckeditor5/11.1.1/balloon/ckeditor.js"></script>-->
+<!--                        <script src="https://cdn.ckeditor.com/ckeditor5/11.1.1/inline/ckeditor.js"></script>-->
+<!--                            <script src="../LetterEditor/ckeditor.js"></script>-->
+            <script src="ckeditor.js"></script>
+            <script src="index.js"></script>
+            <script src="diff.js"></script>
+            <style>
+                body {
+                    font-size: 14pt;
+                    font-family: Arial;
+                    margin: 15px auto;
+                    line-height: 1.2;
+                    color: black;
+                    -webkit-touch-callout:none;
+                }
+            </style>
+            <script>
+                var theEditor;
+                function replace(text) {
+                    console.log("replace text");
+                    theEditor.setData(text);
+                    let str = theEditor.getData();
+                    console.log(str);
+                    return str;
+                }
+
+            function getData() {
+                return theEditor.getData();
+            }
+            </script>
+            </head>
+    <body>
+        <div id="editor">
+            <p>Loading...</p>
+        </div>
+        <script>
+            InlineEditor
+            .create( document.querySelector( '#editor' ), {
+                    fontSize: {
+                    options: [
+                              generatePtSetting( '8' ),
+                              generatePtSetting( '9' ),
+                              generatePtSetting( '10' ),
+                              generatePtSetting( '12' ),
+                              'default',
+                              generatePtSetting( '16' ),
+                              generatePtSetting( '18' ),
+                              generatePtSetting( '20' ),
+                              generatePtSetting( '22' ),
+                              ]
+                    },
+                    toolbar: [ 'bold', 'italic', 'underline', '|', 'bulletedList', 'numberedList', '|', 'undo', 'redo', '|', 'insertTable'],
+                    table: {
+                        contentToolbar: [ 'tableColumn', 'tableRow', 'mergeTableCells' ]
+                    },
+                    autosave: {
+                        waitingTime: 1000, // in ms
+                        save( editor ) {
+                            // The saveData() function must return a promise
+                            // which should be resolved when the data is successfully saved.
+                            return saveData( editor.getData() );
+                        }
+                    }
+                    } )
+                    .then( editor => {
+                          theEditor = editor;
+                          console.log( Array.from( editor.ui.componentFactory.names() ) );
+                          } )
+                          .catch( error => {
+                                 console.error( error );
+                                 } );
+                                 console.log(InlineEditor.builtinPlugins.map( plugin => plugin.pluginName ));
+                                 
+                function generatePtSetting( size ) {
+                                     return {
+                                         model: size,
+                                         title: size,
+                                         view: {
+                                             name: 'span',
+                                             styles: {
+                                                 'font-size': `${ size }pt`
+                                             }
+                                         }
+                                     };
+                }
+
+            function saveData( changedText ) {
+                console.log("saveData - printHelloWorld")
+                window.webkit.messageHandlers.saveChanges.postMessage("Hooray, I can see the text from JS!!!");
+                return new Promise( resolve => {
+                                   setTimeout( () => {
+                                              console.log( 'Saved', changedText );
+
+                                              resolve();
+                                              }, 100 );
+                                   } );
+            }
+
+            </script>
+        <script>
+            function printHelloWorld() {
+                console.log("printHelloWorld")
+                window.webkit.messageHandlers.saveChanges.postMessage("Hooray, I can see the text from JS!!!");
+            }
+            window.onload = printHelloWorld;
+
+            </script>
+    </body>
+</html>

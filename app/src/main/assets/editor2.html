@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="initial-scale=1.0"/>
+    <meta charset="utf-8">
+    <title>CKEditor 5 – Inline editor</title>
+    <!--<script src="https://cdn.ckeditor.com/ckeditor5/11.1.1/classic/ckeditor.js"></script>-->
+    <!--<script src="https://cdn.ckeditor.com/ckeditor5/11.1.1/balloon/ckeditor.js"></script>-->
+    <!--<script src="https://cdn.ckeditor.com/ckeditor5/11.1.1/inline/ckeditor.js"></script>-->
+    <!--<script src="../LetterEditor/ckeditor.js"></script>-->
+    <script src="ckeditor.js"></script>
+    <script src="index.js"></script>
+    <script src="diff.js"></script>
+    <style>
+                body {
+                    font-size: 14pt;
+                    font-family: Arial;
+                    margin: 15px auto;
+                    line-height: 1.2;
+                    color: black;
+                    -webkit-touch-callout:none;
+                }
+
+
+    </style>
+    <script>
+                var theEditor;
+                function replace(text) {
+                    console.log("replace text");
+                    theEditor.setData(text);
+                    let str = theEditor.getData();
+                    console.log(str);
+                    return str;
+                }
+
+            function getData() {
+                return theEditor.getData();
+            }
+
+
+    </script>
+</head>
+<body>
+<div id="editor">
+    <p>I am referring <strong>Abdulai Ali </strong>for evaluation and consideration for a weight management surgical
+        procedure. He currently weighs [# of lbs] pounds and is [# of in.] inches tall. Her/His BMI is [BMI #].</p>
+    <figure class="table">
+        <table>
+            <tbody>
+            <tr>
+                <td>N</td>
+                <td>Test</td>
+                <td>Hed1</td>
+                <td>Hed0,5</td>
+                <td>Hed2</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Lalala</td>
+                <td>Hi</td>
+                <td>123</td>
+                <td>50mg</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>qwe</td>
+                <td>345</td>
+                <td>456</td>
+                <td>Iuyrffh</td>
+            </tr>
+            </tbody>
+        </table>
+    </figure>
+    <p><br>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>I am editing this from the iPhone XR</p>
+    <p>12345789 101112131415</p>
+    <p>&nbsp;</p>
+    <p>I have edited this letter on iPhone.</p>
+    <p>testing autosave</p>
+    <p><br>&nbsp;</p>
+    <p>I have been [patient’s name]’s primary care physician for the past [#of yrs] years.<br>I have supervised several
+        of her/his weight control diets and programs. None of these have resulted in any sustained weight loss. As a
+        result of this persistent morbid obesity, her/his co-morbid conditions are becoming more difficult to
+        <i>manage</i>.</p>
+    <ol>
+        <li>ios</li>
+        <li>test</li>
+        <li><br>&nbsp;</li>
+    </ol>
+    <p><br><br>&nbsp;</p>
+    <p>These <strong>co-morbid conditions</strong> are as follows:</p>
+    <ol>
+        <li>Hypertension</li>
+        <li>Diabetes Mellitus</li>
+        <li>Obesity Related Depression</li>
+    </ol>
+    <figure class="table">
+        <table>
+            <tbody>
+            <tr>
+                <td>Test</td>
+                <td>Test2</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td rowspan="2"><p>3</p>
+                    <p>4</p></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>&nbsp;</td>
+            </tr>
+            </tbody>
+        </table>
+    </figure>
+    <ul>
+        <li>hhgf</li>
+        <li>fhh</li>
+        <li><br><br>&nbsp;</li>
+    </ul>
+    <p><u>Duration:</u></p>
+    <p>3 years 5 years 3 years</p>
+    <p><br><br>&nbsp;</p>
+    <p>Medication:</p>
+    <p><i>Norvasc/Tenormin Glucophage Prozac, 5<sup>2&nbsp;</sup>mg, 6<sub>123&nbsp;</sub>sgsd.</i></p>
+    <p><br><br>&nbsp;</p>
+    <p>Testing bulleted list:&nbsp;</p>
+    <ul>
+        <li>wer</li>
+        <li>asd</li>
+        <li>sfet</li>
+    </ul>
+    <p>Test</p>
+    <p><br><br>&nbsp;</p>
+    <p>New patch? - No</p>
+    <p><br><br>&nbsp;</p>
+    <ol>
+        <li>Edit in the web client</li>
+        <li>edit in iOS client</li>
+        <li>edit on<i><strong><u> iOS - part 2!&nbsp;</u></strong></i></li>
+        <li>123456</li>
+    </ol>
+    <ul>
+        <li>testing bulleted list</li>
+        <li>12346€&amp;@$£#ßyiæ</li>
+    </ul>
+    <p><br><br>&nbsp;</p>
+    <p>Losing weight will certainly make these conditions easier to manage. Since non-surgical programs have failed to
+        provide any long-term benefits for the patient, I feel surgery is her/his only option.</p>
+    <p>I hope you will find [patient’s name] a suitable candidate for the surgical weight reduction program. It will
+        provide a tool to assist her/him in losing weight, as well as</p>
+    <p>maintain that weight loss. I anticipate that this will provide her/him with a significantly improved quality of
+        life.</p>
+    <p><br><br>&nbsp;</p>
+    <p>123</p>
+    <p><br><br>&nbsp;</p>
+    <p>123456</p>
+    <p><strong>Razmik edition</strong></p>
+    <p><i>muchachos</i></p>
+    <p><u>rrrrrrrrrr</u></p>
+    <ul>
+        <li>rffff</li>
+        <li>fdrrdd</li>
+        <li>&nbsp;</li>
+        <li>&nbsp;</li>
+        <li><br>&nbsp;</li>
+    </ul>
+    <p><br>&nbsp;</p>
+    <ol>
+        <li>F</li>
+        <li>ertfff</li>
+    </ol>
+    <p>ertty</p>
+    <figure class="table">
+        <table>
+            <tbody>
+            <tr>
+                <td>Hdhhcc</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>F</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>Ddd</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>Dd</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            </tbody>
+        </table>
+    </figure>
+    <p>Sincerely,</p>
+</div>
+<script>
+            InlineEditor
+            .create( document.querySelector( '#editor' ), {
+                    fontSize: {
+                    options: [
+                              generatePtSetting( '8' ),
+                              generatePtSetting( '9' ),
+                              generatePtSetting( '10' ),
+                              generatePtSetting( '12' ),
+                              'default',
+                              generatePtSetting( '16' ),
+                              generatePtSetting( '18' ),
+                              generatePtSetting( '20' ),
+                              generatePtSetting( '22' ),
+                              ]
+                    },
+                    toolbar: [ 'bold', 'italic', 'underline', '|', 'bulletedList', 'numberedList', '|', 'undo', 'redo', '|', 'insertTable'],
+                    table: {
+                        contentToolbar: [ 'tableColumn', 'tableRow', 'mergeTableCells' ]
+                    },
+                    autosave: {
+                        waitingTime: 1000, // in ms
+                        save( editor ) {
+                            // The saveData() function must return a promise
+                            // which should be resolved when the data is successfully saved.
+                            return saveData( editor.getData() );
+                        }
+                    }
+                    } )
+                    .then( editor => {
+                          theEditor = editor;
+                          console.log( Array.from( editor.ui.componentFactory.names() ) );
+                          } )
+                          .catch( error => {
+                                 console.error( error );
+                                 } );
+                                 console.log(InlineEditor.builtinPlugins.map( plugin => plugin.pluginName ));
+                                 
+                function generatePtSetting( size ) {
+                                     return {
+                                         model: size,
+                                         title: size,
+                                         view: {
+                                             name: 'span',
+                                             styles: {
+                                                 'font-size': `${ size }pt`
+                                             }
+                                         }
+                                     };
+                }
+
+            function saveData( changedText ) {
+                console.log("saveData - printHelloWorld")
+                WebAppInterface.handleChanges(changedText);
+                window.webkit.messageHandlers.saveChanges.postMessage("Hooray, I can see the text from JS!!!");
+                return new Promise( resolve => {
+                                   setTimeout( () => {
+                                              console.log( 'Saved', changedText );
+
+                                              resolve();
+                                              }, 100 );
+                                   } );
+            }
+
+
+
+</script>
+<script>
+            function printHelloWorld() {
+                console.log("printHelloWorld")
+                window.webkit.messageHandlers.saveChanges.postMessage("Hooray, I can see the text from JS!!!");
+            }
+            window.onload = printHelloWorld;
+
+
+
+</script>
+</body>
+</html>

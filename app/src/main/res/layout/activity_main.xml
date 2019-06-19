@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:focusableInTouchMode="true">
+
+    <ScrollView
+        android:id="@+id/nestedScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/webViewProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Loading..."
+                android:textColor="@android:color/black" />
+
+            <com.simbirsoft.insurance.platform.testtexteditor.NoSuggestionsWebView
+                android:id="@+id/webView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/editButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="#0298EC"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                android:onClick="onEditClick"
+                android:paddingStart="24dp"
+                android:paddingTop="16dp"
+                android:paddingEnd="24dp"
+                android:paddingBottom="16dp"
+                android:text="Edit"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@android:color/holo_blue_bright" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/editButtonClone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="#0298EC"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        android:onClick="onEditClick"
+        android:paddingStart="24dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="16dp"
+        android:text="Edit"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
