@@ -9,5 +9,6 @@ class WebAppInterface(val context: Context) {
     @JavascriptInterface
     fun handleChanges(message: String) {
 //        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "Saved", Toast.LENGTH_SHORT).show()
     }
 }
